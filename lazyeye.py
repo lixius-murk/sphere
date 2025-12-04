@@ -78,8 +78,19 @@ def calc_cur_color(bl: blType, ball_position, ground_size, current_time):
     rgb_color = cs.lab_to_rgb(lab_colors[color_index])
     
     return [c / 255.0 for c in rgb_color]    
-    
+
+
+
 class LazyEye():
+    def __init__(self, bl_: blType, movingType_):
+        self.bl = bl_
+        self.movingType = movingType_
+    def run(self):
+        pygame.init()
+        display = (800, 600)
+        pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
+    
+class LazyEyeOne(LazyEye):
     def __init__(self, bl_: blType, movingType_):
         self.bl = bl_
         self.movingType = movingType_
@@ -147,6 +158,88 @@ class LazyEye():
             # Отрисовка сцены
             draw_ground(20.0, self.bl)
             draw_ball(ball_position, ball_radius, cur_color)
+            
+            
+            pygame.display.flip()
+            clock.tick(60)
+                
+class LazyEyeTwo(LazyEye):
+    def __init__(self, bl_: blType, movingType_):
+        self.bl = bl_
+        self.movingType = movingType_
+    def run(self):
+        pygame.init()
+        display = (800, 600)
+        pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
+        
+        glMatrixMode(GL_PROJECTION)
+        glLoadIdentity()
+        
+        #без перспективы (ортографическое представление)
+        #gluPerspective(45, (display[0] / display[1]), 0.1, 100.0)
+
+        ground_size = 15.0
+        aspect_ratio = display[0] / display[1]
+        
+        left = -ground_size
+        right = ground_size
+        bottom = -ground_size / aspect_ratio
+        top = ground_size / aspect_ratio
+            
+        glOrtho(left, right, bottom, top, 0.1, 100.0)
+        
+        #переключение на модельно-видовую матрицу
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity()
+        
+        glEnable(GL_DEPTH_TEST)
+        glEnable(GL_NORMALIZE)
+        init_lighting()
+
+        #параметры сцены
+        orbit_radius = 8.0
+        ball_radius = 1.0
+        speed = 2.0
+        
+        ball_position_one = [0, 0, 0]
+        ball_position_two = [0, 0, 0]
+        start_time = time.time()
+        clock = pygame.time.Clock()
+
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    return
+            
+            set_background_color(self.bl)
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+            
+            cur_time = time.time() - start_time
+            
+            ball_position_one[0], ball_position_one[1], ball_position_one[2] = self.movingType(
+                cur_time, orbit_radius, ground_size, speed )
+            
+            ball_position_two[0], ball_position_two[1], ball_position_two[2] = self.movingType(
+                cur_time, orbit_radius, ground_size, speed )
+            ball_position_two[0] = - ball_position_two[0]
+            
+            cur_color_one = calc_cur_color(self.bl, ball_position_one, 20.0, cur_time)
+            cur_color_two = calc_cur_color(self.bl, ball_position_two, 20.0, cur_time)
+
+            
+            glLoadIdentity()
+            
+            glRotatef(90, 1, 0, 0)  # Поворачиваем камеру
+            
+            # Отодвигаем камеру вверх
+            glTranslatef(0.0, -20.0, 0.0)
+            
+            # Отрисовка сцены
+            draw_ground(20.0, self.bl)
+            draw_ball(ball_position_one, ball_radius, cur_color_one)
+            draw_ball(ball_position_two, ball_radius, cur_color_two)
+
             
             
             pygame.display.flip()

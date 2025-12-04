@@ -1,7 +1,7 @@
 import os
 import sys
 import pygame
-from lazyeye import LazyEye
+from lazyeye import LazyEyeOne, LazyEyeTwo
 from bltype import blType
 import math
 
@@ -48,7 +48,7 @@ def calc_cur_coordinates_vertical(current_time, orbit_radius, ground_sz, speed=1
     return x, y, z
 
 def main():
-    m = LazyEye(blType.Achromatopsia, calc_cur_coordinates_vertical)
+    m = LazyEyeTwo(blType.Achromatopsia, calc_cur_coordinates_diagonal_down)
     
     m.run()  
 

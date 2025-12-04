@@ -3,9 +3,19 @@ import sys
 import pygame
 from lazyeye import LazyEye
 from bltype import blType
+import math
+
+
+def calc_cur_coordinates_circle(current_time, orbit_radius, orbit_speed=1.0):
+    angle = current_time * orbit_speed
+    x = orbit_radius * math.cos(angle)
+    z = orbit_radius * math.sin(angle)
+    y = 0.5  
+    
+    return x, y, z
 
 def main():
-    m = LazyEye(blType.Achromatopsia)
+    m = LazyEye(blType.Achromatopsia, calc_cur_coordinates_circle)
     
     m.run()  
 

@@ -54,14 +54,6 @@ def draw_ball(position, radius, color):
     gluDeleteQuadric(quadric)
     glPopMatrix()
 
-def calc_cur_coordinates(current_time, orbit_radius, orbit_speed=1.0):
-    angle = current_time * orbit_speed
-    x = orbit_radius * math.cos(angle)
-    z = orbit_radius * math.sin(angle)
-    y = 0.5  
-    
-    return x, y, z
-
 def calc_cur_color(bl: blType, ball_position, ground_size, current_time):
     cs = ColorSystem()
     variations = 8
@@ -88,9 +80,9 @@ def calc_cur_color(bl: blType, ball_position, ground_size, current_time):
     return [c / 255.0 for c in rgb_color]    
     
 class LazyEye():
-    def __init__(self, bl_: blType):
+    def __init__(self, bl_: blType, movingType_):
         self.bl = bl_
-    
+        self.movingType = movingType_
     def run(self):
         pygame.init()
         display = (800, 600)
@@ -99,7 +91,7 @@ class LazyEye():
         glMatrixMode(GL_PROJECTION)
         glLoadIdentity()
         
-        # Ортографическая проекция - без перспективы
+        #без перспективы (ортографическое представление)
         #gluPerspective(45, (display[0] / display[1]), 0.1, 100.0)
 
         ground_size = 20.0
@@ -139,7 +131,7 @@ class LazyEye():
             
             cur_time = time.time() - start_time
             
-            ball_position[0], ball_position[1], ball_position[2] = calc_cur_coordinates(
+            ball_position[0], ball_position[1], ball_position[2] = self.movingType(
                 cur_time, orbit_radius )
             
             cur_color = calc_cur_color(self.bl, ball_position, 20.0, cur_time)

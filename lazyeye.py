@@ -94,7 +94,7 @@ class LazyEye():
         #без перспективы (ортографическое представление)
         #gluPerspective(45, (display[0] / display[1]), 0.1, 100.0)
 
-        ground_size = 20.0
+        ground_size = 15.0
         aspect_ratio = display[0] / display[1]
         
         left = -ground_size
@@ -115,6 +115,7 @@ class LazyEye():
         #параметры сцены
         orbit_radius = 8.0
         ball_radius = 1.0
+        speed = 2.0
         
         ball_position = [0, 0, 0]
         start_time = time.time()
@@ -132,7 +133,7 @@ class LazyEye():
             cur_time = time.time() - start_time
             
             ball_position[0], ball_position[1], ball_position[2] = self.movingType(
-                cur_time, orbit_radius )
+                cur_time, orbit_radius, ground_size, speed )
             
             cur_color = calc_cur_color(self.bl, ball_position, 20.0, cur_time)
             
@@ -141,7 +142,7 @@ class LazyEye():
             glRotatef(90, 1, 0, 0)  # Поворачиваем камеру
             
             # Отодвигаем камеру вверх
-            glTranslatef(0.0, -30.0, 0.0)
+            glTranslatef(0.0, -5.0, 0.0)
             
             # Отрисовка сцены
             draw_ground(20.0, self.bl)

@@ -6,16 +6,34 @@ from bltype import blType
 import math
 
 
-def calc_cur_coordinates_circle(current_time, orbit_radius, orbit_speed=1.0):
+def calc_cur_coordinates_circle(current_time, orbit_radius, ground_sz, orbit_speed=1.0):
     angle = current_time * orbit_speed
+    #x = center + radius * cos(time) y = center + radius * sin(time)
     x = orbit_radius * math.cos(angle)
     z = orbit_radius * math.sin(angle)
     y = 0.5  
     
     return x, y, z
 
+#от парвый верхний в левого нижнего
+def calc_cur_coordinates_diagonal_down(current_time, orbit_radius, ground_sz, speed=1.0):
+    angle = current_time * speed
+    val =  math.sin(angle) * (ground_sz/2)
+    y = 0.5
+    
+    return val, y, val
+
+
+#от левого нижнего в парвый верхний не сдвигом фазы, а просто -
+def calc_cur_coordinates_diagonal_up(current_time, orbit_radius, ground_sz, speed=1.0):
+    angle = current_time * speed
+    val =  math.sin(angle) * (ground_sz/2)
+    y = 0.5
+    return -val, y, val
+
+
 def main():
-    m = LazyEye(blType.Achromatopsia, calc_cur_coordinates_circle)
+    m = LazyEye(blType.Achromatopsia, calc_cur_coordinates_diagonal_up)
     
     m.run()  
 

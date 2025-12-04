@@ -31,9 +31,24 @@ def calc_cur_coordinates_diagonal_up(current_time, orbit_radius, ground_sz, spee
     y = 0.5
     return -val, y, val
 
+def calc_cur_coordinates_hotizontal(current_time, orbit_radius, ground_sz, speed=1.0):
+    angle = current_time * speed
+    z = math.sin(angle)*ground_sz
+    y = 0.5
+    x = 0
+    
+    return x, y, z
+
+def calc_cur_coordinates_vertical(current_time, orbit_radius, ground_sz, speed=1.0):
+    angle = current_time * speed
+    x = math.sin(angle)*ground_sz
+    y = 0.5
+    z = 0
+    
+    return x, y, z
 
 def main():
-    m = LazyEye(blType.Achromatopsia, calc_cur_coordinates_diagonal_up)
+    m = LazyEye(blType.Achromatopsia, calc_cur_coordinates_vertical)
     
     m.run()  
 

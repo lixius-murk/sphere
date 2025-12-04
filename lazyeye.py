@@ -142,7 +142,7 @@ class LazyEye():
             glRotatef(90, 1, 0, 0)  # Поворачиваем камеру
             
             # Отодвигаем камеру вверх
-            glTranslatef(0.0, -5.0, 0.0)
+            glTranslatef(0.0, -20.0, 0.0)
             
             # Отрисовка сцены
             draw_ground(20.0, self.bl)

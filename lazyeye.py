@@ -144,7 +144,7 @@ class LazyEyeOne(LazyEye):
             cur_time = time.time() - start_time
             
             ball_position[0], ball_position[1], ball_position[2] = self.movingType(
-                cur_time, orbit_radius, ground_size, speed )
+                cur_time, orbit_radius, ground_size, speed)
             
             cur_color = calc_cur_color(self.bl, ball_position, 20.0, cur_time)
             

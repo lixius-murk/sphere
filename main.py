@@ -6,7 +6,7 @@ from bltype import blType
 import math
 
 
-def calc_cur_coordinates_circle(current_time, orbit_radius, ground_sz, orbit_speed=1.0):
+def calc_cur_coordinates_circle_right(current_time, orbit_radius, ground_sz, orbit_speed=1.0):
     angle = current_time * orbit_speed
     #x = center + radius * cos(time) y = center + radius * sin(time)
     x = orbit_radius * math.cos(angle)
@@ -14,6 +14,15 @@ def calc_cur_coordinates_circle(current_time, orbit_radius, ground_sz, orbit_spe
     y = 0.5  
     
     return x, y, z
+
+def calc_cur_coordinates_circle_left(current_time, orbit_radius, ground_sz, orbit_speed=1.0):
+    angle = current_time * orbit_speed
+    #x = center + radius * cos(time) y = center + radius * sin(time)
+    x = orbit_radius * math.cos(angle)
+    z = orbit_radius * math.sin(angle)
+    y = 0.5  
+    
+    return -x, y, z
 
 #от парвый верхний в левого нижнего
 def calc_cur_coordinates_diagonal_down(current_time, orbit_radius, ground_sz, speed=1.0):
@@ -67,7 +76,7 @@ def calc_cur_coordinates_zigzag(current_time, orbit_radius, ground_sz, speed):
 
 def calc_cur_coordinates_clock(current_time, orbit_radius, ground_sz, speed):
     y = 0.5
-    
+    #вариант с автоматом или с парсированием врмемени
     MOVE_TIME = 2.0
     STOP_TIME = 1.0
     CYCLE_TIME = 12.0
@@ -123,81 +132,56 @@ def calc_cur_coordinates_clock(current_time, orbit_radius, ground_sz, speed):
     
     return x, y, z
 
-    #     # Инициализация состояния
-    # state = {
-    #     'last_time': 0,
-    #     'current_pos': 0,  # 0=12, 1=3, 2=6, 3=9
-    #     'state': 'stopped',  # 'moving' or 'stopped'
-    #     'state_start': 0,
-    #     'current_angle': -math.pi/2  # начинаем с 12 часов
-    # }
+def calc_cur_coordinates_two_diagonals(current_time, orbit_radius, ground_sz, speed):
+    y = 0.5
+    t = current_time
     
-    # # Углы для позиций часов
-    # clock_angles = [-math.pi/2, 0, math.pi/2, math.pi]
-    # stop_time = 1.0
-    # moving_time = 2.0
-    # def clock_func(current_time, orbit_radius_param, ground_sz, speed):
-    #     """Функция движения"""
-    #     nonlocal state
-        
-    #     # Для совместимости используем переданный радиус
-    #     radius = orbit_radius_param if orbit_radius_param > 0 else orbit_radius
-        
-    #     # Инициализация при первом вызове
-    #     if state['last_time'] == 0:
-    #         state['last_time'] = current_time
-    #         state['state_start'] = current_time
-        
-    #     if state['state'] == 'stopped':
-    #         # Проверяем, не пора ли начать движение
-    #         if current_time - state['state_start'] >= stop_time:
-    #             state['state'] = 'moving'
-    #             state['state_start'] = current_time
-    #             state['current_pos'] = (state['current_pos'] + 1) % 4
-                
-    #     elif state['state'] == 'moving':
-    #         # Вычисляем прогресс движения
-    #         elapsed = current_time - state['state_start']
-    #         progress = min(elapsed / move_time, 1.0)
-            
-    #         # Начальный и конечный углы
-    #         start_idx = (state['current_pos'] - 1) % 4
-    #         end_idx = state['current_pos']
-            
-    #         start_angle = clock_angles[start_idx]
-    #         end_angle = clock_angles[end_idx]
-            
-    #         # Корректируем разницу углов
-    #         angle_diff = end_angle - start_angle
-    #         if angle_diff > math.pi:
-    #             angle_diff -= 2 * math.pi
-    #         elif angle_diff < -math.pi:
-    #             angle_diff += 2 * math.pi
-            
-    #         # Интерполяция угла
-    #         state['current_angle'] = start_angle + angle_diff * progress
-            
-    #         # Проверяем завершение движения
-    #         if progress >= 1.0:
-    #             state['state'] = 'stopped'
-    #             state['state_start'] = current_time
-        
-    #     # Обновляем время
-    #     state['last_time'] = current_time
-        
-    #     # Вычисляем координаты
-    #     x = radius * math.cos(state['current_angle'])
-    #     z = radius * math.sin(state['current_angle'])
-    #     y = 0.5
-        
-    #     return x, y, z
+    #цикл по 12 секунд, по 6 на сторону
+    period_num = int(t) % 12
     
-    # return clock_func
+    angle = t * math.pi 
+    val = math.sin(angle) * (ground_sz/2)
+    
+    if period_num < 6:
+        return -val, y, val
+    else:
+        return val, y, val
 
 
+def calc_cur_coordinates_rectangle(current_time, orbit_radius, ground_sz, speed):
+    y = 0.5
+    t = current_time * speed
+    cycle_duration = 16.0
+    cycle_time = t % cycle_duration
+    
+    if cycle_time < 4.0:
+        # Сторона 1: правый край, сверху вниз
+        progress = cycle_time / 4.0  # от 0 до 1
+        x = ground_sz / 2
+        z = ground_sz/2 - progress * ground_sz  # от ground_sz/2 до -ground_sz/2
+        
+    elif cycle_time < 8.0:
+        # Сторона 2: нижний край, справа налево
+        progress = (cycle_time - 4.0) / 4.0  # от 0 до 1
+        z = -ground_sz / 2
+        x = ground_sz/2 - progress * ground_sz  # от ground_sz/2 до -ground_sz/2
+        
+    elif cycle_time < 12.0:
+        # Сторона 3: левый край, снизу вверх
+        progress = (cycle_time - 8.0) / 4.0  # от 0 до 1
+        x = -ground_sz / 2
+        z = -ground_sz/2 + progress * ground_sz  # от -ground_sz/2 до ground_sz/2
+        
+    else:  # cycle_time < 16.0
+        # Сторона 4: верхний край, слева направо
+        progress = (cycle_time - 12.0) / 4.0  # от 0 до 1
+        z = ground_sz / 2
+        x = -ground_sz/2 + progress * ground_sz  # от -ground_sz/2 до ground_sz/2
+    
+    return x, y, z
 
 def main():
-    m = LazyEyeOne(blType.Achromatopsia, calc_cur_coordinates_clock)
+    m = LazyEyeOne(blType.Achromatopsia, calc_cur_coordinates_rectangle)
     
     m.run()  
 

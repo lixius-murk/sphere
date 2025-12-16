@@ -70,13 +70,13 @@ class ColorSystem:
         
         for i in range(variations):
             if base_lab.lab_a == 0 and base_lab.lab_b == 0:  # Achromatopsia
-                # Только вариации яркости
+                #только вариации яркости
                 l_variation = 30 * math.sin(x_norm * math.pi * 2 + i)
                 new_l = base_lab.lab_l + l_variation
                 new_l = max(20, min(80, new_l))
                 new_color = LabColor(new_l, 0, 0)
             else:
-                # Для цветного зрения - изменяем и оттенки
+                #для цветного зрения - изменяем и оттенки
                 angle1 = x_norm * math.pi * 2 + i * math.pi / 2
                 angle2 = z_norm * math.pi * 2 + time * 0.3
                 

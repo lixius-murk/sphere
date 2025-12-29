@@ -1,0 +1,174 @@
+import pygame
+import time
+from pygame.locals import *
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from .colorsystem import ColorSystem
+from ..datamanager.datamanager import DataManager
+from ..enum.bltype import blType
+
+class BaseRenderer:
+    def __init__(self, bl_type: blType, movement_func):
+        self.bl_type = bl_type
+        self.movement_func = movement_func
+        self.session_manager = DataManager()
+        self.cs = ColorSystem() # Instance of color system
+        self.display_size = (800, 600)
+        self.ground_size = 15.0
+        self.orbit_radius = 8.0
+        self.ball_radius = 1.0
+        self.speed = 2.0
+        
+    def _init_opengl(self):
+        try:
+            glMatrixMode(GL_PROJECTION)
+            glLoadIdentity()
+            aspect = self.display_size[0] / self.display_size[1]
+            glOrtho(-self.ground_size, self.ground_size, -self.ground_size/aspect, self.ground_size/aspect, 0.1, 100.0)
+            glMatrixMode(GL_MODELVIEW)
+            glLoadIdentity()
+            glEnable(GL_DEPTH_TEST)
+            glEnable(GL_NORMALIZE)
+            self.cs.init_lighting()
+        except:
+            pass
+    def _draw_ground(self, size):
+        # Use Achromatopsia from enum correctly
+        if self.bl_type == blType.Achromatopsia:
+            glColor3f(0.3, 0.3, 0.3)
+        else:
+            glColor3f(0.2, 0.4, 0.2)
+        
+        glBegin(GL_QUADS)
+        glNormal3f(0, 1, 0)
+        glVertex3f(-size, 0, -size)
+        glVertex3f(-size, 0, size)
+        glVertex3f(size, 0, size)
+        glVertex3f(size, 0, -size)
+        glEnd()
+    
+    def _draw_ball(self, position, radius, color):
+        glPushMatrix()
+        glTranslatef(*position)
+        glColor3f(*color)
+        quadric = gluNewQuadric()
+        gluSphere(quadric, radius, 32, 32)
+        gluDeleteQuadric(quadric)
+        glPopMatrix()
+    
+    def _setup_camera(self):
+        glLoadIdentity()
+        glRotatef(90, 1, 0, 0)
+        glTranslatef(0.0, -20.0, 0.0)
+
+class EyeGymnasticsOne(BaseRenderer):
+    def run(self):
+        # Initialize session_data outside try to ensure finally block can access it
+        session_data = self.session_manager.start_session(
+            self.bl_type, 
+            self.movement_func.__name__
+        )
+        
+        try:
+            pygame.init()
+            pygame.display.set_mode(self.display_size, DOUBLEBUF | OPENGL)
+            pygame.display.set_caption(f"Eye Gymnastics - {self.bl_type.name}")
+            self._init_opengl()
+            
+            ball_position = [0, 0, 0]
+            start_time = time.time()
+            clock = pygame.time.Clock()
+            running = True
+            
+            while running:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        running = False
+                    elif event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_ESCAPE:
+                            running = False
+                
+                current_time = time.time() - start_time
+                ball_position[0], ball_position[1], ball_position[2] = self.movement_func(
+                    current_time, self.orbit_radius, self.ground_size, self.speed
+                )
+                
+                # Use self.cs instance
+                ball_color = self.cs.calc_cur_color(self.bl_type, ball_position, 20.0, current_time)
+                
+                self.cs.set_background_color(self.bl_type)
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+                
+                self._setup_camera()
+                self._draw_ground(20.0)
+                self._draw_ball(ball_position, self.ball_radius, ball_color)
+                
+                pygame.display.flip()
+                clock.tick(60)
+            
+            session_data["completion_status"] = "completed"
+
+        except KeyboardInterrupt:
+            session_data["completion_status"] = "interrupted"
+        except Exception as e:
+            session_data["completion_status"] = "error"
+            session_data["error_message"] = str(e)
+        finally:
+            self.session_manager.end_session(session_data)
+            pygame.quit()
+
+class EyeGymnasticsTwo(BaseRenderer):
+    def run(self):
+        session_data = self.session_manager.start_session(
+            self.bl_type,
+            self.movement_func.__name__
+        )
+        session_data["version"] = "two_balls"
+        
+        try:
+            pygame.init()
+            pygame.display.set_mode(self.display_size, DOUBLEBUF | OPENGL)
+            self._init_opengl()
+            
+            ball_positions = [[0, 0, 0], [0, 0, 0]]
+            start_time = time.time()
+            clock = pygame.time.Clock()
+            running = True
+            
+            while running:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT: running = False
+                
+                current_time = time.time() - start_time
+                
+                # Update positions
+                pos1 = self.movement_func(current_time, self.orbit_radius, self.ground_size, self.speed)
+                ball_positions[0] = list(pos1)
+                ball_positions[1] = [-pos1[0], pos1[1], pos1[2]] # Mirror
+                
+                # Use self.cs instance
+                ball_colors = [
+                    self.cs.calc_cur_color(self.bl_type, ball_positions[0], 20.0, current_time),
+                    self.cs.calc_cur_color(self.bl_type, ball_positions[1], 20.0, current_time)
+                ]
+                
+                self.cs.set_background_color(self.bl_type)
+                glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+                
+                self._setup_camera()
+                self._draw_ground(20.0)
+                
+                for pos, color in zip(ball_positions, ball_colors):
+                    self._draw_ball(pos, self.ball_radius, color)
+                
+                pygame.display.flip()
+                clock.tick(60)
+                
+            session_data["completion_status"] = "completed"
+
+        except Exception as e:
+            session_data["completion_status"] = "error"
+            session_data["error_message"] = str(e)
+        finally:
+            self.session_manager.end_session(session_data)
+            pygame.quit()

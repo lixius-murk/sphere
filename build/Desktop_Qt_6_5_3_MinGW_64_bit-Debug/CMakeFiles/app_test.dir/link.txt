@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\app_test.dir/objects.a
+D:\Qt\Tools\mingw1120_64\bin\ar.exe qc CMakeFiles\app_test.dir/objects.a @CMakeFiles\app_test.dir\objects1.rsp
+D:\Qt\Tools\mingw1120_64\bin\g++.exe -DQT_QML_DEBUG -g -mwindows -Wl,--whole-archive CMakeFiles\app_test.dir/objects.a -Wl,--no-whole-archive -o app_test.exe -Wl,--out-implib,libapp_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\app_test.dir\linkLibs.rsp

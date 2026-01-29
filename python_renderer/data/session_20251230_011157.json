@@ -1,0 +1,9 @@
+{
+    "color_blindness_type": "Deuteranopia",
+    "movement_function": "calc_cur_coordinates_circle_right",
+    "session_start": "2025-12-30T01:11:56.583494",
+    "completion_status": "error",
+    "error_message": "'ColorSystem' object has no attribute 'init_lighting'",
+    "session_end": "2025-12-30T01:11:57.376436",
+    "duration_seconds": 0.79
+}

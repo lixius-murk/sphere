@@ -9,6 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "app_test_autogen/timestamp" "custom" "app_test_autogen/deps"
+  "D:/QtProj/app_test/BufferReader.cpp" "CMakeFiles/app_test.dir/BufferReader.cpp.obj" "gcc" "CMakeFiles/app_test.dir/BufferReader.cpp.obj.d"
+  "D:/QtProj/app_test/FrameProvider.cpp" "CMakeFiles/app_test.dir/FrameProvider.cpp.obj" "gcc" "CMakeFiles/app_test.dir/FrameProvider.cpp.obj.d"
+  "D:/QtProj/app_test/PythonController.cpp" "CMakeFiles/app_test.dir/PythonController.cpp.obj" "gcc" "CMakeFiles/app_test.dir/PythonController.cpp.obj.d"
   "D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/EWIEGA46WW/qrc_qml.cpp" "CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj" "gcc" "CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj.d"
   "D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/mocs_compilation.cpp" "CMakeFiles/app_test.dir/app_test_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/app_test.dir/app_test_autogen/mocs_compilation.cpp.obj.d"
   "D:/QtProj/app_test/main.cpp" "CMakeFiles/app_test.dir/main.cpp.obj" "gcc" "CMakeFiles/app_test.dir/main.cpp.obj.d"

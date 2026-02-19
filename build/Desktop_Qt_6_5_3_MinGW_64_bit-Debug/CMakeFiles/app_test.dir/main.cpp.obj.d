@@ -363,4 +363,47 @@ CMakeFiles/app_test.dir/main.cpp.obj: D:\QtProj\app_test\main.cpp \
  D:/Qt/6.5.3/mingw_64/include/QtQml/qqmlregistration.h \
  D:/Qt/6.5.3/mingw_64/include/QtQmlIntegration/qqmlintegration.h \
  D:/Qt/6.5.3/mingw_64/include/QtQml/qqmlerror.h \
- D:/Qt/6.5.3/mingw_64/include/QtQml/qqmlabstracturlinterceptor.h
+ D:/Qt/6.5.3/mingw_64/include/QtQml/qqmlabstracturlinterceptor.h \
+ D:/Qt/6.5.3/mingw_64/include/QtQml/QQmlContext \
+ D:/Qt/6.5.3/mingw_64/include/QtQml/qqmlcontext.h \
+ D:\QtProj\app_test\frameprovider.h \
+ D:/Qt/6.5.3/mingw_64/include/QtQuick/QQuickImageProvider \
+ D:/Qt/6.5.3/mingw_64/include/QtQuick/qquickimageprovider.h \
+ D:/Qt/6.5.3/mingw_64/include/QtQuick/qtquickglobal.h \
+ D:/Qt/6.5.3/mingw_64/include/QtQuick/qtquick-config.h \
+ D:/Qt/6.5.3/mingw_64/include/QtQuick/qtquickexports.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qimage.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qcolor.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qrgb.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qrgba64.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpaintdevice.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qrect.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpixelformat.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpolygon.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qregion.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qline.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpixmap.h \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/QImage \
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qimage.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QMutex \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qmutex.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qtsan_impl.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QTimer \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qtimer.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qbasictimer.h \
+ D:\QtProj\app_test\BufferReader.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QSharedMemory \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qsharedmemory.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QtTypes \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qtypes.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QByteArray \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qbytearray.h \
+ D:\QtProj\app_test\pythoncontroller.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QDebug \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qdebug.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QObject \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qobject.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QProcess \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qprocess.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qiodevice.h

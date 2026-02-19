@@ -134,9 +134,9 @@ class EyeGymnasticsOne(BaseRenderer):
                 # переворачиваем изображение, тк opengl создает картинку снизу вверх
                 img = np.frombuffer(raw, dtype=np.uint8).reshape((h, w, 3))
                 raw = np.flipud(img).tobytes()
-                
+                print("Frame", self.writer.frame_id)
                 self.writer.write_raw(raw)
-                print(f"added raw to buffer {self.writer.frame_id}...")
+                #print(f"added raw to buffer {self.writer.frame_id}...")
                 
                 clock.tick(60)
             

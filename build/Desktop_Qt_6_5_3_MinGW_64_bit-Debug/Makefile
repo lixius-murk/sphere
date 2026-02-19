@@ -212,6 +212,78 @@ app_test_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test_autogen.dir\build.make CMakeFiles/app_test_autogen.dir/build
 .PHONY : app_test_autogen/fast
 
+BufferReader.obj: BufferReader.cpp.obj
+.PHONY : BufferReader.obj
+
+# target to build an object file
+BufferReader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/BufferReader.cpp.obj
+.PHONY : BufferReader.cpp.obj
+
+BufferReader.i: BufferReader.cpp.i
+.PHONY : BufferReader.i
+
+# target to preprocess a source file
+BufferReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/BufferReader.cpp.i
+.PHONY : BufferReader.cpp.i
+
+BufferReader.s: BufferReader.cpp.s
+.PHONY : BufferReader.s
+
+# target to generate assembly for a file
+BufferReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/BufferReader.cpp.s
+.PHONY : BufferReader.cpp.s
+
+FrameProvider.obj: FrameProvider.cpp.obj
+.PHONY : FrameProvider.obj
+
+# target to build an object file
+FrameProvider.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameProvider.cpp.obj
+.PHONY : FrameProvider.cpp.obj
+
+FrameProvider.i: FrameProvider.cpp.i
+.PHONY : FrameProvider.i
+
+# target to preprocess a source file
+FrameProvider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameProvider.cpp.i
+.PHONY : FrameProvider.cpp.i
+
+FrameProvider.s: FrameProvider.cpp.s
+.PHONY : FrameProvider.s
+
+# target to generate assembly for a file
+FrameProvider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameProvider.cpp.s
+.PHONY : FrameProvider.cpp.s
+
+PythonController.obj: PythonController.cpp.obj
+.PHONY : PythonController.obj
+
+# target to build an object file
+PythonController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/PythonController.cpp.obj
+.PHONY : PythonController.cpp.obj
+
+PythonController.i: PythonController.cpp.i
+.PHONY : PythonController.i
+
+# target to preprocess a source file
+PythonController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/PythonController.cpp.i
+.PHONY : PythonController.cpp.i
+
+PythonController.s: PythonController.cpp.s
+.PHONY : PythonController.s
+
+# target to generate assembly for a file
+PythonController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/PythonController.cpp.s
+.PHONY : PythonController.cpp.s
+
 app_test_autogen/EWIEGA46WW/qrc_qml.obj: app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj
 .PHONY : app_test_autogen/EWIEGA46WW/qrc_qml.obj
 
@@ -300,6 +372,15 @@ help:
 	@echo ... app_test_autogen_timestamp_deps
 	@echo ... app_test_qmlimportscan
 	@echo ... app_test
+	@echo ... BufferReader.obj
+	@echo ... BufferReader.i
+	@echo ... BufferReader.s
+	@echo ... FrameProvider.obj
+	@echo ... FrameProvider.i
+	@echo ... FrameProvider.s
+	@echo ... PythonController.obj
+	@echo ... PythonController.i
+	@echo ... PythonController.s
 	@echo ... app_test_autogen/EWIEGA46WW/qrc_qml.obj
 	@echo ... app_test_autogen/EWIEGA46WW/qrc_qml.i
 	@echo ... app_test_autogen/EWIEGA46WW/qrc_qml.s

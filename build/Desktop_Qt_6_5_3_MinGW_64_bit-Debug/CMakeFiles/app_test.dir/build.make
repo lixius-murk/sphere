@@ -115,11 +115,56 @@ CMakeFiles/app_test.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/main.cpp.s"
 	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\main.cpp -o CMakeFiles\app_test.dir\main.cpp.s
 
+CMakeFiles/app_test.dir/BufferReader.cpp.obj: CMakeFiles/app_test.dir/flags.make
+CMakeFiles/app_test.dir/BufferReader.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
+CMakeFiles/app_test.dir/BufferReader.cpp.obj: D:/QtProj/app_test/BufferReader.cpp
+CMakeFiles/app_test.dir/BufferReader.cpp.obj: CMakeFiles/app_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app_test.dir/BufferReader.cpp.obj"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app_test.dir/BufferReader.cpp.obj -MF CMakeFiles\app_test.dir\BufferReader.cpp.obj.d -o CMakeFiles\app_test.dir\BufferReader.cpp.obj -c D:\QtProj\app_test\BufferReader.cpp
+
+CMakeFiles/app_test.dir/BufferReader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_test.dir/BufferReader.cpp.i"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\QtProj\app_test\BufferReader.cpp > CMakeFiles\app_test.dir\BufferReader.cpp.i
+
+CMakeFiles/app_test.dir/BufferReader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/BufferReader.cpp.s"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\BufferReader.cpp -o CMakeFiles\app_test.dir\BufferReader.cpp.s
+
+CMakeFiles/app_test.dir/FrameProvider.cpp.obj: CMakeFiles/app_test.dir/flags.make
+CMakeFiles/app_test.dir/FrameProvider.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
+CMakeFiles/app_test.dir/FrameProvider.cpp.obj: D:/QtProj/app_test/FrameProvider.cpp
+CMakeFiles/app_test.dir/FrameProvider.cpp.obj: CMakeFiles/app_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app_test.dir/FrameProvider.cpp.obj"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app_test.dir/FrameProvider.cpp.obj -MF CMakeFiles\app_test.dir\FrameProvider.cpp.obj.d -o CMakeFiles\app_test.dir\FrameProvider.cpp.obj -c D:\QtProj\app_test\FrameProvider.cpp
+
+CMakeFiles/app_test.dir/FrameProvider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_test.dir/FrameProvider.cpp.i"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\QtProj\app_test\FrameProvider.cpp > CMakeFiles\app_test.dir\FrameProvider.cpp.i
+
+CMakeFiles/app_test.dir/FrameProvider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/FrameProvider.cpp.s"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\FrameProvider.cpp -o CMakeFiles\app_test.dir\FrameProvider.cpp.s
+
+CMakeFiles/app_test.dir/PythonController.cpp.obj: CMakeFiles/app_test.dir/flags.make
+CMakeFiles/app_test.dir/PythonController.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
+CMakeFiles/app_test.dir/PythonController.cpp.obj: D:/QtProj/app_test/PythonController.cpp
+CMakeFiles/app_test.dir/PythonController.cpp.obj: CMakeFiles/app_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app_test.dir/PythonController.cpp.obj"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app_test.dir/PythonController.cpp.obj -MF CMakeFiles\app_test.dir\PythonController.cpp.obj.d -o CMakeFiles\app_test.dir\PythonController.cpp.obj -c D:\QtProj\app_test\PythonController.cpp
+
+CMakeFiles/app_test.dir/PythonController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_test.dir/PythonController.cpp.i"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\QtProj\app_test\PythonController.cpp > CMakeFiles\app_test.dir\PythonController.cpp.i
+
+CMakeFiles/app_test.dir/PythonController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/PythonController.cpp.s"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\PythonController.cpp -o CMakeFiles\app_test.dir\PythonController.cpp.s
+
 CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj: CMakeFiles/app_test.dir/flags.make
 CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
 CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj: app_test_autogen/EWIEGA46WW/qrc_qml.cpp
 CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj: CMakeFiles/app_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
 	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj -MF CMakeFiles\app_test.dir\app_test_autogen\EWIEGA46WW\qrc_qml.cpp.obj.d -o CMakeFiles\app_test.dir\app_test_autogen\EWIEGA46WW\qrc_qml.cpp.obj -c D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\app_test_autogen\EWIEGA46WW\qrc_qml.cpp
 
 CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.i: cmake_force
@@ -134,6 +179,9 @@ CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.s: cmake_force
 app_test_OBJECTS = \
 "CMakeFiles/app_test.dir/app_test_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/app_test.dir/main.cpp.obj" \
+"CMakeFiles/app_test.dir/BufferReader.cpp.obj" \
+"CMakeFiles/app_test.dir/FrameProvider.cpp.obj" \
+"CMakeFiles/app_test.dir/PythonController.cpp.obj" \
 "CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
 
 # External object files for target app_test
@@ -141,6 +189,9 @@ app_test_EXTERNAL_OBJECTS =
 
 app_test.exe: CMakeFiles/app_test.dir/app_test_autogen/mocs_compilation.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/main.cpp.obj
+app_test.exe: CMakeFiles/app_test.dir/BufferReader.cpp.obj
+app_test.exe: CMakeFiles/app_test.dir/FrameProvider.cpp.obj
+app_test.exe: CMakeFiles/app_test.dir/PythonController.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/build.make
 app_test.exe: D:/Qt/6.5.3/mingw_64/lib/libQt6Quick.a
@@ -154,7 +205,7 @@ app_test.exe: D:/Qt/6.5.3/mingw_64/lib/libQt6EntryPoint.a
 app_test.exe: CMakeFiles/app_test.dir/linkLibs.rsp
 app_test.exe: CMakeFiles/app_test.dir/objects1.rsp
 app_test.exe: CMakeFiles/app_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable app_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable app_test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\app_test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

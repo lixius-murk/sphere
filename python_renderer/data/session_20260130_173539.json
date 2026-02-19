@@ -1,0 +1,9 @@
+{
+    "color_blindness_type": "Deuteranopia",
+    "movement_function": "calc_cur_coordinates_circle_right",
+    "session_start": "2026-01-30T17:35:38.425966",
+    "completion_status": "error",
+    "error_message": "'SharedFrameWriter' object has no attribute 'frame_size'",
+    "session_end": "2026-01-30T17:35:39.036014",
+    "duration_seconds": 0.61
+}

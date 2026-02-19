@@ -1,55 +1,61 @@
 import struct
 from multiprocessing import shared_memory
 
+CTRL_FMT = "IIII"
+CTRL_SIZE = struct.calcsize(CTRL_FMT)
+
+FMT_RGB = 0  # просто enum
+
+_ctrl = None
+_frame = None
+
 class SharedFrameWriter:
-    CTRL_NAME = "ctrl"
-    FRAME_NAME = "frame"
-    FMT_RGB = 0
+    def __init__(self, w, h):
+        global _ctrl, _frame
 
-    def __init__(self, width: int, height: int):
-        self.w = width
-        self.h = height
-        self.frame_size = self.w * self.h * 3
+        self.w = w
+        self.h = h
+        self.frame_size = w * h * 3
+        self.frame_id = 0
 
-        try:
-            self.ctrl = shared_memory.SharedMemory(
-                name=self.CTRL_NAME,
+        if _ctrl is None:
+            _ctrl = shared_memory.SharedMemory(
+                name="ctrl",
                 create=True,
-                size=16
-            )
-        except FileExistsError:
-            self.ctrl = shared_memory.SharedMemory(
-                name=self.CTRL_NAME,
-                create=False
+                size=CTRL_SIZE
             )
 
-        try:
-            self.frame = shared_memory.SharedMemory(
-                name=self.FRAME_NAME,
+        if _frame is None:
+            _frame = shared_memory.SharedMemory(
+                name="frame",
                 create=True,
                 size=self.frame_size
             )
-        except FileExistsError:
-            self.frame = shared_memory.SharedMemory(
-                name=self.FRAME_NAME,
-                create=False
-            )
 
-        self.frame_id = 0
-        
-    
+        self.ctrl = _ctrl
+        self.frame = _frame
+
+        print("Shared memory created:")
+        print("CTRL:", self.ctrl.name)
+        print("FRAME:", self.frame.name)
+
     def write_raw(self, rgb_bytes: bytes):
         if len(rgb_bytes) != self.frame_size:
-            raise ValueError("Frame size mismatch")
+            raise ValueError(
+                f"Frame size mismatch: {len(rgb_bytes)} != {self.frame_size}"
+            )
 
+        # пишем frame
         self.frame.buf[:self.frame_size] = rgb_bytes
+
+        # обновляем ctrl block
         self.frame_id += 1
         struct.pack_into(
-            "IIII",
+            CTRL_FMT,
             self.ctrl.buf,
             0,
             self.w,
             self.h,
-            self.FMT_RGB,
+            FMT_RGB,
             self.frame_id
         )

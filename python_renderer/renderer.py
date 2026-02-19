@@ -20,7 +20,10 @@ def launch_app():
     
     try:
         print(f"Starting session for {user_vision.name}...")
+        
         app.run()
+        print("Shared memory created:", self.ctrl.name, self.frame.name, flush=True)
+
     except Exception as e:
         print(f"Application failed to start: {e}")
 

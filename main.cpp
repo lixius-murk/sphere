@@ -1,25 +1,37 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
+#include <QQmlContext>
+#include "frameprovider.h"
+#include "pythoncontroller.h"
 int main(int argc, char *argv[])
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
-    QGuiApplication app(argc, argv);
+    // qDebug() << "App started";
 
+    // QGuiApplication app(argc, argv);
+
+    // QQmlApplicationEngine engine;
+    // qDebug() << "Engine created";
+
+    // engine.load(QUrl("qrc:/main.qml"));
+
+    // if (engine.rootObjects().isEmpty()) {
+    //     qDebug() << "QML load FAILED";
+    //     return -1;
+    // }
+
+    // qDebug() << "QML loaded OK";
+    // return app.exec();
+    QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [url](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl)
-                QCoreApplication::exit(-1);
-        },
-        Qt::QueuedConnection);
-    engine.load(url);
+
+    engine.addImageProvider("frames", new FrameProvider);
+
+    auto *py = new PythonController(&engine);
+    engine.rootContext()->setContextProperty("PythonController", py);
+
+    engine.load(QUrl("qrc:/main.qml"));
+    if (engine.rootObjects().isEmpty())
+        return -1;
 
     return app.exec();
 }

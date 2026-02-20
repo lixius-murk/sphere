@@ -21,7 +21,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(app_test
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        BufferReader.h BufferReader.cpp
+        FrameReceiver.h FrameReceiver.cpp
         FrameProvider.h FrameProvider.cpp
         PythonController.h PythonController.cpp
     )

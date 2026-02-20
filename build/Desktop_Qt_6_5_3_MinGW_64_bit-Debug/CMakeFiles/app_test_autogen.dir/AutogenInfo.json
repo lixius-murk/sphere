@@ -960,15 +960,15 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/QtProj/app_test/BufferReader.h",
-			"MU",
-			"EWIEGA46WW/moc_BufferReader.cpp",
-			null
-		],
-		[
 			"D:/QtProj/app_test/FrameProvider.h",
 			"MU",
 			"EWIEGA46WW/moc_FrameProvider.cpp",
+			null
+		],
+		[
+			"D:/QtProj/app_test/FrameReceiver.h",
+			"MU",
+			"EWIEGA46WW/moc_FrameReceiver.cpp",
 			null
 		],
 		[
@@ -1058,8 +1058,8 @@
 	"SETTINGS_FILE" : "D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/CMakeFiles/app_test_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/QtProj/app_test/BufferReader.cpp", "MU", null ],
 		[ "D:/QtProj/app_test/FrameProvider.cpp", "MU", null ],
+		[ "D:/QtProj/app_test/FrameReceiver.cpp", "MU", null ],
 		[ "D:/QtProj/app_test/PythonController.cpp", "MU", null ],
 		[ "D:/QtProj/app_test/main.cpp", "MU", null ]
 	],

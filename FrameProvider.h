@@ -5,27 +5,48 @@
 #include <QImage>
 #include <QMutex>
 #include <QTimer>
-#include "BufferReader.h"
-
-class FrameProvider final : public QQuickImageProvider
+#include "FrameReceiver.h"
+class FrameProvider : public QQuickImageProvider
 {
-    BufferReader reader;
+    FrameReceiver receiver;
     QImage lastFrame;
     QMutex mutex;
 public:
-    FrameProvider()
-        : QQuickImageProvider(QQuickImageProvider::Image) {
-        auto *timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, this, &FrameProvider::updateLoop);
-        timer->start(16);
-    }
-    void updateLoop();
+    FrameProvider() : QQuickImageProvider(QQuickImageProvider::Image) {}
+    QImage requestImage(const QString&, QSize*, const QSize&)
+    {
+        static bool pythonStarted = false;
 
-    QImage requestImage(
-        const QString&,
-        QSize*,
-        const QSize&
-        ) override;
+        // Check if Python is running (you might want to expose this from PythonController)
+        // For now, just try to connect if we don't have frames yet
+        if (!pythonStarted && lastFrame.isNull()) {
+            receiver.connectToServer();
+        }
+
+        QImage newFrame;
+        if (receiver.getFrame(newFrame)) {
+            QMutexLocker lock(&mutex);
+            lastFrame = newFrame;
+            pythonStarted = true;
+            qDebug() << "✓ First frame received!";
+        }
+
+        if (lastFrame.isNull()) {
+            static QImage stub(800, 600, QImage::Format_RGB888);
+            stub.fill(Qt::black);
+
+            // Draw "Waiting for Python..." text
+            static bool firstTime = true;
+            if (firstTime) {
+                qDebug() << "Waiting for Python renderer to start...";
+                firstTime = false;
+            }
+
+            return stub;
+        }
+
+        return lastFrame;
+    }
 };
 
 #endif

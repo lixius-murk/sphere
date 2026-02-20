@@ -7,11 +7,13 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
 
-from src.render.colorsystem import ColorSystem
-from src.render.ipc.sharedmemory import SharedFrameWriter
 from datamanager.datamanager import DataManager
 from enumData.bltype import blType
-from src.render import movements 
+
+from src.render.colorsystem import ColorSystem
+from src.render.ipc.sharedmemory import SharedFrameWriter
+from src.render.frameserver import FrameServer
+
 
 
 def create_fbo(w, h):
@@ -92,7 +94,7 @@ class EyeGymnasticsOne(BaseRenderer):
             self.bl_type, 
             self.movement_func.__name__
         )
-        
+        frame_server = FrameServer() 
         try:
             pygame.init()
             pygame.display.set_mode(self.display_size, DOUBLEBUF | OPENGL | HIDDEN)
@@ -140,8 +142,8 @@ class EyeGymnasticsOne(BaseRenderer):
                 raw = np.flipud(img).tobytes()
                 print("Frame", self.writer.frame_id)
                 self.writer.write_raw(raw)
-                #print(f"added raw to buffer {self.writer.frame_id}...")
-                
+                frame_server.send_frame(self.display_size[0], self.display_size[1], raw)
+                time.sleep(0.001)
                 clock.tick(60)
             
             session_data["status"] = "completed"
@@ -161,7 +163,8 @@ class EyeGymnasticsTwo(BaseRenderer):
             self.bl_type,
             self.movement_func.__name__
         )
-        
+        frame_server = FrameServer() 
+
         try:
             pygame.init()
             pygame.display.set_mode(self.display_size, DOUBLEBUF | OPENGL | HIDDEN)
@@ -188,7 +191,7 @@ class EyeGymnasticsTwo(BaseRenderer):
                     self.cs.calc_cur_color(self.bl_type, ball_positions[0], 20.0, current_time),
                     self.cs.calc_cur_color(self.bl_type, ball_positions[1], 20.0, current_time)
                 ]
-                self.session_manager.log_coordinates(ball_position[0])
+                self.session_manager.log_coordinates(ball_positions[0])
 
                 
                 self.cs.set_background_color(self.bl_type)
@@ -211,8 +214,8 @@ class EyeGymnasticsTwo(BaseRenderer):
                 raw = np.flipud(img).tobytes()
                 
                 self.writer.write_raw(raw)                
-                
-                
+                frame_server.send_frame(self.display_size[0], self.display_size[1], raw)
+                time.sleep(0.001)
                 clock.tick(60)
                 
             session_data["status"] = "completed"

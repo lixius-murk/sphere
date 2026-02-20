@@ -212,30 +212,6 @@ app_test_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test_autogen.dir\build.make CMakeFiles/app_test_autogen.dir/build
 .PHONY : app_test_autogen/fast
 
-BufferReader.obj: BufferReader.cpp.obj
-.PHONY : BufferReader.obj
-
-# target to build an object file
-BufferReader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/BufferReader.cpp.obj
-.PHONY : BufferReader.cpp.obj
-
-BufferReader.i: BufferReader.cpp.i
-.PHONY : BufferReader.i
-
-# target to preprocess a source file
-BufferReader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/BufferReader.cpp.i
-.PHONY : BufferReader.cpp.i
-
-BufferReader.s: BufferReader.cpp.s
-.PHONY : BufferReader.s
-
-# target to generate assembly for a file
-BufferReader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/BufferReader.cpp.s
-.PHONY : BufferReader.cpp.s
-
 FrameProvider.obj: FrameProvider.cpp.obj
 .PHONY : FrameProvider.obj
 
@@ -259,6 +235,30 @@ FrameProvider.s: FrameProvider.cpp.s
 FrameProvider.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameProvider.cpp.s
 .PHONY : FrameProvider.cpp.s
+
+FrameReceiver.obj: FrameReceiver.cpp.obj
+.PHONY : FrameReceiver.obj
+
+# target to build an object file
+FrameReceiver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameReceiver.cpp.obj
+.PHONY : FrameReceiver.cpp.obj
+
+FrameReceiver.i: FrameReceiver.cpp.i
+.PHONY : FrameReceiver.i
+
+# target to preprocess a source file
+FrameReceiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameReceiver.cpp.i
+.PHONY : FrameReceiver.cpp.i
+
+FrameReceiver.s: FrameReceiver.cpp.s
+.PHONY : FrameReceiver.s
+
+# target to generate assembly for a file
+FrameReceiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app_test.dir\build.make CMakeFiles/app_test.dir/FrameReceiver.cpp.s
+.PHONY : FrameReceiver.cpp.s
 
 PythonController.obj: PythonController.cpp.obj
 .PHONY : PythonController.obj
@@ -372,12 +372,12 @@ help:
 	@echo ... app_test_autogen_timestamp_deps
 	@echo ... app_test_qmlimportscan
 	@echo ... app_test
-	@echo ... BufferReader.obj
-	@echo ... BufferReader.i
-	@echo ... BufferReader.s
 	@echo ... FrameProvider.obj
 	@echo ... FrameProvider.i
 	@echo ... FrameProvider.s
+	@echo ... FrameReceiver.obj
+	@echo ... FrameReceiver.i
+	@echo ... FrameReceiver.s
 	@echo ... PythonController.obj
 	@echo ... PythonController.i
 	@echo ... PythonController.s

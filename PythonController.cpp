@@ -1,6 +1,8 @@
 #include "PythonController.h"
 #include <QCoreApplication>
 #include <QDir>
+#include <QSharedMemory>
+
 
 PythonController::PythonController(QObject *parent): QObject(parent){
     process.setProcessChannelMode(QProcess::MergedChannels);
@@ -9,7 +11,8 @@ PythonController::PythonController(QObject *parent): QObject(parent){
 Q_INVOKABLE void  PythonController::startRenderer(){
     if (process.state() != QProcess::NotRunning)
         return;
-
+    QSharedMemory ctrl("ctrl");
+    QSharedMemory frame("frame");
     qDebug() << "Starting python renderer";
     process.setWorkingDirectory(
         QDir::cleanPath(

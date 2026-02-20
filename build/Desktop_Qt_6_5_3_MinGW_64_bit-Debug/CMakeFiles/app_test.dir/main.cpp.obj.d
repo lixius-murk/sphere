@@ -392,18 +392,24 @@ CMakeFiles/app_test.dir/main.cpp.obj: D:\QtProj\app_test\main.cpp \
  D:/Qt/6.5.3/mingw_64/include/QtCore/QTimer \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtimer.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qbasictimer.h \
- D:\QtProj\app_test\BufferReader.h \
+ D:\QtProj\app_test\FrameReceiver.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/QSharedMemory \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qsharedmemory.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/QtTypes \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtypes.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/QByteArray \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qbytearray.h \
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/QAbstractSocket \
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qiodevice.h \
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/QTcpSocket \
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qtcpsocket.h \
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qabstractsocket.h \
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qhostaddress.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QObject \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qobject.h \
  D:\QtProj\app_test\pythoncontroller.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/QDebug \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qdebug.h \
- D:/Qt/6.5.3/mingw_64/include/QtCore/QObject \
- D:/Qt/6.5.3/mingw_64/include/QtCore/qobject.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/QProcess \
- D:/Qt/6.5.3/mingw_64/include/QtCore/qprocess.h \
- D:/Qt/6.5.3/mingw_64/include/QtCore/qiodevice.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qprocess.h

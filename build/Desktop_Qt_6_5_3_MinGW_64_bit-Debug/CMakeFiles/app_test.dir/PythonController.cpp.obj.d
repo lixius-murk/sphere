@@ -365,4 +365,6 @@ CMakeFiles/app_test.dir/PythonController.cpp.obj: \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qdatetime.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qcalendar.h \
  D:/Qt/6.5.3/mingw_64/include/QtCore/qlocale.h \
- D:/Qt/6.5.3/mingw_64/include/QtCore/qvariant.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qvariant.h \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QSharedMemory \
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qsharedmemory.h

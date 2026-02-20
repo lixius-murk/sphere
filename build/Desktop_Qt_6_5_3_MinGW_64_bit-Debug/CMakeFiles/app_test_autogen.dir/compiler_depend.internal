@@ -41,9 +41,13 @@ D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/ti
  C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows-windres.cmake
  C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/Windows.cmake
  C:/Program Files/CMake/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QByteArray
  D:/Qt/6.5.3/mingw_64/include/QtCore/QDebug
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QMutex
  D:/Qt/6.5.3/mingw_64/include/QtCore/QObject
  D:/Qt/6.5.3/mingw_64/include/QtCore/QProcess
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QSharedMemory
+ D:/Qt/6.5.3/mingw_64/include/QtCore/QtTypes
  D:/Qt/6.5.3/mingw_64/include/QtCore/q20memory.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/q20type_traits.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qalgorithms.h
@@ -87,14 +91,17 @@ D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/ti
  D:/Qt/6.5.3/mingw_64/include/QtCore/qiodevicebase.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qiterable.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qiterator.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qline.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qlist.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qlogging.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qmalloc.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qmap.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qmargins.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qmath.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qmetacontainer.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qmetatype.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qminmax.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qmutex.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qnamespace.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qnumeric.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qobject.h
@@ -103,16 +110,20 @@ D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/ti
  D:/Qt/6.5.3/mingw_64/include/QtCore/qobjectdefs_impl.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qoverload.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qpair.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qpoint.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qprocess.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qprocessordetection.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qrect.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qrefcount.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qscopedpointer.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qscopeguard.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qset.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qshareddata.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qshareddata_impl.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qsharedmemory.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qsharedpointer.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qsharedpointer_impl.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qsize.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qstring.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qstringalgorithms.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qstringbuilder.h
@@ -138,6 +149,7 @@ D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/ti
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtnoop.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtpreprocessorsupport.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtresource.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qtsan_impl.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qttranslation.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qttypetraits.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtversion.h
@@ -145,9 +157,33 @@ D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/ti
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtypeinfo.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qtypes.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qutf8stringview.h
+ D:/Qt/6.5.3/mingw_64/include/QtCore/qvariant.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qvarlengtharray.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qversiontagging.h
  D:/Qt/6.5.3/mingw_64/include/QtCore/qxptype_traits.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/QImage
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qcolor.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qimage.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpaintdevice.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpixelformat.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qpolygon.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qregion.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qrgb.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qrgba64.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qtgui-config.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qtguiexports.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qtguiglobal.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qtransform.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qwindowdefs.h
+ D:/Qt/6.5.3/mingw_64/include/QtGui/qwindowdefs_win.h
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/QAbstractSocket
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/QTcpSocket
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qabstractsocket.h
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qhostaddress.h
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qtcpsocket.h
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qtnetwork-config.h
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qtnetworkexports.h
+ D:/Qt/6.5.3/mingw_64/include/QtNetwork/qtnetworkglobal.h
  D:/Qt/6.5.3/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake
  D:/Qt/6.5.3/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake
  D:/Qt/6.5.3/mingw_64/lib/cmake/Qt6/Qt6Config.cmake
@@ -961,11 +997,11 @@ D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/app_test_autogen/ti
  D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h
  D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  D:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
- D:/QtProj/app_test/BufferReader.cpp
- D:/QtProj/app_test/BufferReader.h
  D:/QtProj/app_test/CMakeLists.txt
  D:/QtProj/app_test/FrameProvider.cpp
  D:/QtProj/app_test/FrameProvider.h
+ D:/QtProj/app_test/FrameReceiver.cpp
+ D:/QtProj/app_test/FrameReceiver.h
  D:/QtProj/app_test/PythonController.cpp
  D:/QtProj/app_test/PythonController.h
  D:/QtProj/app_test/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake

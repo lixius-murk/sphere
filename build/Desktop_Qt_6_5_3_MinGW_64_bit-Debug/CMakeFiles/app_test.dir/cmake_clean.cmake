@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app_test.dir/BufferReader.cpp.obj"
-  "CMakeFiles/app_test.dir/BufferReader.cpp.obj.d"
   "CMakeFiles/app_test.dir/FrameProvider.cpp.obj"
   "CMakeFiles/app_test.dir/FrameProvider.cpp.obj.d"
+  "CMakeFiles/app_test.dir/FrameReceiver.cpp.obj"
+  "CMakeFiles/app_test.dir/FrameReceiver.cpp.obj.d"
   "CMakeFiles/app_test.dir/PythonController.cpp.obj"
   "CMakeFiles/app_test.dir/PythonController.cpp.obj.d"
   "CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj"

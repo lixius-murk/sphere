@@ -115,20 +115,20 @@ CMakeFiles/app_test.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/main.cpp.s"
 	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\main.cpp -o CMakeFiles\app_test.dir\main.cpp.s
 
-CMakeFiles/app_test.dir/BufferReader.cpp.obj: CMakeFiles/app_test.dir/flags.make
-CMakeFiles/app_test.dir/BufferReader.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
-CMakeFiles/app_test.dir/BufferReader.cpp.obj: D:/QtProj/app_test/BufferReader.cpp
-CMakeFiles/app_test.dir/BufferReader.cpp.obj: CMakeFiles/app_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app_test.dir/BufferReader.cpp.obj"
-	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app_test.dir/BufferReader.cpp.obj -MF CMakeFiles\app_test.dir\BufferReader.cpp.obj.d -o CMakeFiles\app_test.dir\BufferReader.cpp.obj -c D:\QtProj\app_test\BufferReader.cpp
+CMakeFiles/app_test.dir/FrameReceiver.cpp.obj: CMakeFiles/app_test.dir/flags.make
+CMakeFiles/app_test.dir/FrameReceiver.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
+CMakeFiles/app_test.dir/FrameReceiver.cpp.obj: D:/QtProj/app_test/FrameReceiver.cpp
+CMakeFiles/app_test.dir/FrameReceiver.cpp.obj: CMakeFiles/app_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\QtProj\app_test\build\Desktop_Qt_6_5_3_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app_test.dir/FrameReceiver.cpp.obj"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app_test.dir/FrameReceiver.cpp.obj -MF CMakeFiles\app_test.dir\FrameReceiver.cpp.obj.d -o CMakeFiles\app_test.dir\FrameReceiver.cpp.obj -c D:\QtProj\app_test\FrameReceiver.cpp
 
-CMakeFiles/app_test.dir/BufferReader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_test.dir/BufferReader.cpp.i"
-	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\QtProj\app_test\BufferReader.cpp > CMakeFiles\app_test.dir\BufferReader.cpp.i
+CMakeFiles/app_test.dir/FrameReceiver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app_test.dir/FrameReceiver.cpp.i"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\QtProj\app_test\FrameReceiver.cpp > CMakeFiles\app_test.dir\FrameReceiver.cpp.i
 
-CMakeFiles/app_test.dir/BufferReader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/BufferReader.cpp.s"
-	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\BufferReader.cpp -o CMakeFiles\app_test.dir\BufferReader.cpp.s
+CMakeFiles/app_test.dir/FrameReceiver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app_test.dir/FrameReceiver.cpp.s"
+	D:\Qt\Tools\mingw1120_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\QtProj\app_test\FrameReceiver.cpp -o CMakeFiles\app_test.dir\FrameReceiver.cpp.s
 
 CMakeFiles/app_test.dir/FrameProvider.cpp.obj: CMakeFiles/app_test.dir/flags.make
 CMakeFiles/app_test.dir/FrameProvider.cpp.obj: CMakeFiles/app_test.dir/includes_CXX.rsp
@@ -179,7 +179,7 @@ CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.s: cmake_force
 app_test_OBJECTS = \
 "CMakeFiles/app_test.dir/app_test_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/app_test.dir/main.cpp.obj" \
-"CMakeFiles/app_test.dir/BufferReader.cpp.obj" \
+"CMakeFiles/app_test.dir/FrameReceiver.cpp.obj" \
 "CMakeFiles/app_test.dir/FrameProvider.cpp.obj" \
 "CMakeFiles/app_test.dir/PythonController.cpp.obj" \
 "CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
@@ -189,7 +189,7 @@ app_test_EXTERNAL_OBJECTS =
 
 app_test.exe: CMakeFiles/app_test.dir/app_test_autogen/mocs_compilation.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/main.cpp.obj
-app_test.exe: CMakeFiles/app_test.dir/BufferReader.cpp.obj
+app_test.exe: CMakeFiles/app_test.dir/FrameReceiver.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/FrameProvider.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/PythonController.cpp.obj
 app_test.exe: CMakeFiles/app_test.dir/app_test_autogen/EWIEGA46WW/qrc_qml.cpp.obj

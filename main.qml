@@ -42,7 +42,6 @@ Window {
                     anchors.fill: parent
                     cache: false
                     source: "image://frames/current"
-                    fillMode: Image.PreserveAspectFit
 
                     Timer {
                         interval: 16

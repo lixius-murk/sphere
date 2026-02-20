@@ -18,20 +18,37 @@ class SharedFrameWriter:
         self.frame_size = w * h * 3
         self.frame_id = 0
 
-        if _ctrl is None:
-            _ctrl = shared_memory.SharedMemory(
-                name="ctrl",
-                create=True,
-                size=CTRL_SIZE
-            )
-
-        if _frame is None:
+        try:
             _frame = shared_memory.SharedMemory(
                 name="frame",
                 create=True,
                 size=self.frame_size
             )
+        except FileExistsError:
+            shm = shared_memory.SharedMemory(name="frame", create=False)
+            shm.unlink()
+            shm.close()
+            _ctrl = shared_memory.SharedMemory(
+                name="frame",
+                create=True,
+                size=self.frame_size
+            )
 
+        try:
+            _ctrl = shared_memory.SharedMemory(
+                name="ctrl",
+                create=True,
+                size=CTRL_SIZE
+            )
+        except FileExistsError:
+            shm = shared_memory.SharedMemory(name="ctrl", create=False)
+            shm.unlink()
+            shm.close()
+            _ctrl = shared_memory.SharedMemory(
+                name="ctrl",
+                create=True,
+                size=CTRL_SIZE
+            )
         self.ctrl = _ctrl
         self.frame = _frame
 

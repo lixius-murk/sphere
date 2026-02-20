@@ -179,6 +179,18 @@ def calc_cur_coordinates_rectangle(current_time, orbit_radius, ground_sz, speed)
         
     return x, y, z
 
+movements = {
+    "circle_right": calc_cur_coordinates_circle_right,
+    "circle_left": calc_cur_coordinates_circle_left,
+    "diagonal_up": calc_cur_coordinates_diagonal_up,
+    "diagonal_down": calc_cur_coordinates_diagonal_down,
+    "horizontal": calc_cur_coordinates_hotizontal,
+    "vertical": calc_cur_coordinates_vertical,
+    "zigzag": calc_cur_coordinates_zigzag,
+    "clock": calc_cur_coordinates_clock,
+    "two_diagonals": calc_cur_coordinates_two_diagonals,
+    "rectangle": calc_cur_coordinates_rectangle,
+}
 
 # MOVEMENT_FUNCTIONS = {
 #     "circle_right": calc_cur_coordinates_circle_right,

@@ -1,13 +1,17 @@
 import pygame
 import time
+import sys
+import os
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from .colorsystem import ColorSystem
-from .ipc.sharedmemory import SharedFrameWriter
-from ..datamanager.datamanager import DataManager
-from ..enum.bltype import blType
 import numpy as np
+
+from src.render.colorsystem import ColorSystem
+from src.render.ipc.sharedmemory import SharedFrameWriter
+from datamanager.datamanager import DataManager
+from enumData.bltype import blType
+from src.render import movements 
 
 
 def create_fbo(w, h):
@@ -113,7 +117,7 @@ class EyeGymnasticsOne(BaseRenderer):
                 ball_position[0], ball_position[1], ball_position[2] = self.movement_func(
                     current_time, self.orbit_radius, self.ground_size, self.speed
                 )
-                
+                self.session_manager.log_coordinates(ball_position)
                 ball_color = self.cs.calc_cur_color(self.bl_type, ball_position, 20.0, current_time)
                 
                 self.cs.set_background_color(self.bl_type)
@@ -140,13 +144,13 @@ class EyeGymnasticsOne(BaseRenderer):
                 
                 clock.tick(60)
             
-            session_data["completion_status"] = "completed"
+            session_data["status"] = "completed"
 
         except KeyboardInterrupt:
-            session_data["completion_status"] = "interrupted"
+            session_data["status"] = "interrupted"
         except Exception as e:
-            session_data["completion_status"] = "error"
-            session_data["error_message"] = str(e)
+            session_data["status"] = "error"
+            self.session_manager.add_error(e)
         finally:
             self.session_manager.end_session(session_data)
             pygame.quit()
@@ -157,7 +161,6 @@ class EyeGymnasticsTwo(BaseRenderer):
             self.bl_type,
             self.movement_func.__name__
         )
-        session_data["version"] = "two_balls"
         
         try:
             pygame.init()
@@ -178,13 +181,15 @@ class EyeGymnasticsTwo(BaseRenderer):
                 current_time = time.time() - start_time
                 
                 pos1 = self.movement_func(current_time, self.orbit_radius, self.ground_size, self.speed)
-                ball_positions[0] = list(pos1)
+                ball_positions[0] = pos1
                 ball_positions[1] = [-pos1[0], pos1[1], pos1[2]] 
                 
                 ball_colors = [
                     self.cs.calc_cur_color(self.bl_type, ball_positions[0], 20.0, current_time),
                     self.cs.calc_cur_color(self.bl_type, ball_positions[1], 20.0, current_time)
                 ]
+                self.session_manager.log_coordinates(ball_position[0])
+
                 
                 self.cs.set_background_color(self.bl_type)
                 glBindFramebuffer(GL_FRAMEBUFFER, self.fbo)
@@ -210,11 +215,12 @@ class EyeGymnasticsTwo(BaseRenderer):
                 
                 clock.tick(60)
                 
-            session_data["completion_status"] = "completed"
+            session_data["status"] = "completed"
 
         except Exception as e:
-            session_data["completion_status"] = "error"
-            session_data["error_message"] = str(e)
+            session_data["status"] = "error"
+            self.session_manager.add_error(e)
+
         finally:
             self.session_manager.end_session(session_data)
             pygame.quit()

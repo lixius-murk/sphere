@@ -1,2 +1,2 @@
-from .render.render import EyeGymnasticsOne, EyeGymnasticsTwo
-from .enum.bltype import blType
+from src.render.render import EyeGymnasticsOne, EyeGymnasticsTwo
+from enumData.bltype import blType

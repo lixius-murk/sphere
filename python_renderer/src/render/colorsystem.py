@@ -3,7 +3,7 @@ import numpy
 import cv2
 from colormath.color_objects import LabColor, sRGBColor
 from OpenGL.GL import *
-from ..enum.bltype import blType
+from enumData.bltype import blType
 
 class ColorSystem:
     def __init__(self):

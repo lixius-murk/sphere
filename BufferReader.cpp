@@ -4,8 +4,8 @@
 
 BufferReader::BufferReader()
 {
-    ctrl.setKey("ctrl");
-    data.setKey("frame");
+    ctrl.setKey("Global\\ctrl");
+    data.setKey("Global\\frame");
 
     // if (!ctrl.attach())
     //     qDebug() << "ctrl attach failed:" << ctrl.errorString();

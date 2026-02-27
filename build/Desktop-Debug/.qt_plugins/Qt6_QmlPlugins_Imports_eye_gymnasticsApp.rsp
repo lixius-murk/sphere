@@ -1,0 +1,15 @@
+-rootPath
+/home/felix/eye_gymnastics
+-cmake-output
+-output-file
+/home/felix/eye_gymnastics/build/Desktop-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_eye_gymnasticsApp.cmake
+-importPath
+/home/felix/eye_gymnastics/build/Desktop-Debug/qml/Main
+-importPath
+/home/felix/eye_gymnastics/build/Desktop-Debug/qml
+-importPath
+/usr/lib/x86_64-linux-gnu/qt6/qml
+-qrcFiles
+/home/felix/eye_gymnastics/build/Desktop-Debug/.rcc/configuration.qrc
+/home/felix/eye_gymnastics/build/Desktop-Debug/.rcc/qmake_Main.qrc
+/home/felix/eye_gymnastics/build/Desktop-Debug/.rcc/eye_gymnasticsApp_raw_qml_0.qrc

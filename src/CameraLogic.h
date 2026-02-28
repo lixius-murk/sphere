@@ -23,7 +23,7 @@ public:
 
 signals:
     void activeChanged();
-    void frameReady(const QImage &frame); // emit if you want to process frames
+    void frameReady(const QImage &frame);
 
 private slots:
     void onFrame(const QVideoFrame &frame);

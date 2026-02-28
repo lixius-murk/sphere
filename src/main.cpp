@@ -10,11 +10,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    // Image provider — engine takes ownership, do NOT delete it
     FrameProvider *provider = new FrameProvider();
     engine.addImageProvider("frameprovider", provider);
 
-    // QML-accessible objects
     CameraLogic     camera;
     PythonController python;
 

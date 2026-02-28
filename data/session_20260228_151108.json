@@ -1,0 +1,11 @@
+{
+    "session_id": "20260228_151050",
+    "color_blindness_type": "Tritanopia",
+    "movement_function": "calc_cur_coordinates_zigzag",
+    "session_start": "2026-02-28T15:10:50.801651",
+    "completion_status": "started",
+    "status": "completed",
+    "session_end": "2026-02-28T15:11:08.466061",
+    "duration_seconds": 17.66,
+    "total_frames": 1073
+}

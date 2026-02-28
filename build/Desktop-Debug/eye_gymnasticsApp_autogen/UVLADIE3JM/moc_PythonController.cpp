@@ -26,13 +26,16 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_PythonController_t {
-    uint offsetsAndSizes[12];
+    uint offsetsAndSizes[18];
     char stringdata0[17];
     char stringdata1[15];
     char stringdata2[1];
     char stringdata3[14];
     char stringdata4[13];
-    char stringdata5[8];
+    char stringdata5[7];
+    char stringdata6[9];
+    char stringdata7[13];
+    char stringdata8[8];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_PythonController_t::offsetsAndSizes) + ofs), len 
@@ -42,13 +45,19 @@ Q_CONSTINIT static const qt_meta_stringdata_PythonController_t qt_meta_stringdat
         QT_MOC_LITERAL(17, 14),  // "runningChanged"
         QT_MOC_LITERAL(32, 0),  // ""
         QT_MOC_LITERAL(33, 13),  // "startRenderer"
-        QT_MOC_LITERAL(47, 12),  // "stopRenderer"
-        QT_MOC_LITERAL(60, 7)   // "running"
+        QT_MOC_LITERAL(47, 12),  // "rendererType"
+        QT_MOC_LITERAL(60, 6),  // "blType"
+        QT_MOC_LITERAL(67, 8),  // "movement"
+        QT_MOC_LITERAL(76, 12),  // "stopRenderer"
+        QT_MOC_LITERAL(89, 7)   // "running"
     },
     "PythonController",
     "runningChanged",
     "",
     "startRenderer",
+    "rendererType",
+    "blType",
+    "movement",
     "stopRenderer",
     "running"
 };
@@ -62,7 +71,7 @@ Q_CONSTINIT static const uint qt_meta_data_PythonController[] = {
        0,       // classname
        0,    0, // classinfo
        3,   14, // methods
-       1,   35, // properties
+       1,   41, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -72,18 +81,18 @@ Q_CONSTINIT static const uint qt_meta_data_PythonController[] = {
        1,    0,   32,    2, 0x06,    2 /* Public */,
 
  // methods: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   33,    2, 0x02,    3 /* Public */,
-       4,    0,   34,    2, 0x02,    4 /* Public */,
+       3,    3,   33,    2, 0x02,    3 /* Public */,
+       7,    0,   40,    2, 0x02,    7 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    4,    5,    6,
     QMetaType::Void,
 
  // properties: name, type, flags
-       5, QMetaType::Bool, 0x00015001, uint(0), 0,
+       8, QMetaType::Bool, 0x00015001, uint(0), 0,
 
        0        // eod
 };
@@ -103,6 +112,9 @@ Q_CONSTINIT const QMetaObject PythonController::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'startRenderer'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'stopRenderer'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -116,7 +128,7 @@ void PythonController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         (void)_t;
         switch (_id) {
         case 0: _t->runningChanged(); break;
-        case 1: _t->startRenderer(); break;
+        case 1: _t->startRenderer((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
         case 2: _t->stopRenderer(); break;
         default: ;
         }
@@ -141,7 +153,6 @@ void PythonController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     } else if (_c == QMetaObject::ResetProperty) {
     } else if (_c == QMetaObject::BindableProperty) {
     }
-    (void)_a;
 }
 
 const QMetaObject *PythonController::metaObject() const

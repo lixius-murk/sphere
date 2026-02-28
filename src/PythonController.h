@@ -14,7 +14,9 @@ public:
 
     bool running() const { return m_process.state() != QProcess::NotRunning; }
 
-    Q_INVOKABLE void startRenderer();
+    Q_INVOKABLE void startRenderer(const QString &rendererType,
+                                   const QString &blType,
+                                   const QString &movement);
     Q_INVOKABLE void stopRenderer();
 
 signals:

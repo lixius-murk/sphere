@@ -58,9 +58,6 @@ ApplicationWindow {
                             source: "image://frameprovider/frame_" + renderRect.frameTag
                             cache: false
                         }
-
-                        // FrameProvider::requestImage reads fresh mmap data
-                        // every time the URL changes (frameTag increments).
                         Timer {
                             interval: 33
                             running: tabBar.currentIndex === 1
@@ -69,6 +66,7 @@ ApplicationWindow {
                         }
 
                     }
+
 
                     Rectangle {
                         Layout.fillWidth: true
@@ -80,12 +78,33 @@ ApplicationWindow {
                             anchors.margins: 10
                             spacing: 12
 
+                            ComboBox {
+                                id: blTypeBox
+                                model: ["Healthy", "Deuteranopia", "Protanopia", "Tritanopia", "Achromatopsia"]
+                            }
+
+                            ComboBox {
+                                id: movementBox
+                                model: ["circle_right", "circle_left", "diagonal_up", "diagonal_down",
+                                        "horizontal", "vertical", "zigzag", "clock", "two_diagonals", "rectangle"]
+                            }
+
+                            ComboBox {
+                                id: rendererBox
+                                model: ["1", "2"]
+                            }
+
                             Button {
                                 text: pythonCtrl.running ? "Stop Renderer" : "Start Renderer"
                                 onClicked: {
-                                            cameraLogic.toggle();
-                                            (pythonCtrl.running) ? pythonCtrl.stopRenderer() : pythonCtrl.startRenderer()}
-
+                                    cameraLogic.toggle()
+                                    if (pythonCtrl.running)
+                                        pythonCtrl.stopRenderer()
+                                    else
+                                        pythonCtrl.startRenderer(rendererBox.currentText,
+                                                                 blTypeBox.currentText,
+                                                                 movementBox.currentText)
+                                }
                             }
 
                             Item { Layout.fillWidth: true }

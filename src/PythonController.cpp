@@ -24,15 +24,15 @@ PythonController::PythonController(QObject *parent) : QObject(parent)
     });
 }
 
-void PythonController::startRenderer()
+Q_INVOKABLE void PythonController::startRenderer(const QString &rendererType,
+                                                const QString &blType,
+                                                const QString &movement)
 {
     if (m_process.state() != QProcess::NotRunning) return;
-
-    // Clean up stale shared memory
     QString cleanScript = QDir::cleanPath(
         QCoreApplication::applicationDirPath() + "/../../clean.sh");
-    m_cleanup.start("bash", {cleanScript});
-    m_cleanup.waitForFinished(1000);
+    QProcess::execute("bash", {cleanScript});
+
 
     QString workDir = QDir::cleanPath(
         QCoreApplication::applicationDirPath() + "/../../python_renderer");
@@ -49,7 +49,7 @@ void PythonController::startRenderer()
 
     m_process.setWorkingDirectory(workDir);
     m_process.setProcessEnvironment(env);
-    m_process.start(python, {script});
+    m_process.start(python, {script, rendererType, blType, movement});
 }
 
 void PythonController::stopRenderer()

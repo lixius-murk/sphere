@@ -77,6 +77,20 @@
                 "methods": [
                     {
                         "access": "public",
+                        "arguments": [
+                            {
+                                "name": "rendererType",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "blType",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "movement",
+                                "type": "QString"
+                            }
+                        ],
                         "name": "startRenderer",
                         "returnType": "void"
                     },

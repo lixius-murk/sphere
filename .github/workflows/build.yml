@@ -62,7 +62,9 @@ jobs:
           Write-Host "Found: $($exe.FullName)"
           New-Item -ItemType Directory -Force -Path dist-windows
           Copy-Item $exe.FullName dist-windows/
-          & "$env:Qt6_DIR/../../../bin/windeployqt6.exe" --qmldir . --release dist-windows/eye_gymnasticsApp.exe
+          $deploy = Get-ChildItem -Recurse -Filter "windeployqt6.exe" "D:\a\eye_gymnastics\Qt" | Select-Object -First 1
+          Write-Host "windeployqt6: $($deploy.FullName)"
+          & $deploy.FullName --qmldir . --release dist-windows/eye_gymnasticsApp.exe
 
       - name: Upload
         uses: actions/upload-artifact@v4

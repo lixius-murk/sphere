@@ -55,17 +55,15 @@ jobs:
         shell: pwsh
         run: cmake --build build --config Release --parallel
 
-      - name: Deploy
+	- name: Deploy
         shell: pwsh
         run: |
           $exe = Get-ChildItem -Recurse -Filter "eye_gymnasticsApp.exe" build | Select-Object -First 1
-          Write-Host "Found: $($exe.FullName)"
           New-Item -ItemType Directory -Force -Path dist-windows
           Copy-Item $exe.FullName dist-windows/
           $deploy = Get-ChildItem -Recurse -Filter "windeployqt6.exe" "D:\a\eye_gymnastics\Qt" | Select-Object -First 1
-          Write-Host "windeployqt6: $($deploy.FullName)"
-          & $deploy.FullName --qmldir $env:GITHUB_WORKSPACE --release dist-windows/eye_gymnasticsApp.exe
-
+          & $deploy.FullName --release --no-translations --qmldir "$env:GITHUB_WORKSPACE" dist-windows/eye_gymnasticsApp.exe
+          exit 0
       - name: Upload
         uses: actions/upload-artifact@v4
         with:

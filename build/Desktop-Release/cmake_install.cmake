@@ -62,15 +62,15 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/eye_gymnasticsApp")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/eye_gymnasticsApp"
-         RPATH "\$ORIGIN:\$ORIGIN/../lib/x86_64-linux-gnu")
+         RPATH "\$ORIGIN:\$ORIGIN/../lib")
   endif()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/felix/eye_gymnastics/build/Desktop-Release/eye_gymnasticsApp")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/eye_gymnasticsApp" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/eye_gymnasticsApp")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/eye_gymnasticsApp"
-         OLD_RPATH ":::::::::::::::::::::::::::::::::::::::"
-         NEW_RPATH "\$ORIGIN:\$ORIGIN/../lib/x86_64-linux-gnu")
+         OLD_RPATH "::::::::::::::::::::::"
+         NEW_RPATH "\$ORIGIN:\$ORIGIN/../lib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/eye_gymnasticsApp")
     endif()

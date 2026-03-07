@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../qml/eye_gymnastics/libeye_gymnasticsplugin.a CMakeFiles/eye_gymnasticsplugin.dir/eye_gymnasticsplugin_autogen/mocs_compilation.cpp.o CMakeFiles/eye_gymnasticsplugin.dir/eye_gymnasticsplugin_eye_gymnasticsPlugin.cpp.o
+/usr/bin/ranlib ../../qml/eye_gymnastics/libeye_gymnasticsplugin.a

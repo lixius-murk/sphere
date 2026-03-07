@@ -28,17 +28,31 @@ Q_INVOKABLE void PythonController::startRenderer(const QString &rendererType,
                                                 const QString &blType,
                                                 const QString &movement)
 {
+    QString appDir      = QCoreApplication::applicationDirPath();
+    QString projectRoot = appDir;
+
+    QDir dir(appDir);
+    while (!dir.exists("python_renderer") && !dir.isRoot()) {
+        dir.cdUp();
+    }
+    projectRoot = dir.absolutePath();
+
+    QString cleanScript = projectRoot + "/clean.sh";
+    QString workDir     = projectRoot + "/python_renderer";
+
+    qDebug() << "appDir:" << appDir;
+
     if (m_process.state() != QProcess::NotRunning) return;
-    QString cleanScript = QDir::cleanPath(
-        QCoreApplication::applicationDirPath() + "/../../clean.sh");
+
     QProcess::execute("bash", {cleanScript});
 
-
-    QString workDir = QDir::cleanPath(
-        QCoreApplication::applicationDirPath() + "/../../python_renderer");
     QString python  = workDir + "/.venv/bin/python3";
     QString script  = workDir + "/renderer.py";
 
+
+    qDebug() << "Project root:" << projectRoot;
+    qDebug() << "Clean script:" << cleanScript;
+    qDebug() << "Work dir:" << workDir;
     if (!QFile::exists(python)) python = "python3";
     if (!QFile::exists(script)) { qWarning() << "Script not found:" << script; return; }
 

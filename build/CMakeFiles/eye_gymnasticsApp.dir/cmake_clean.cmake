@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  ".rcc/qmlcache/eye_gymnasticsApp_main_qml.cpp"
+  ".rcc/qrc_configuration.cpp"
+  ".rcc/qrc_eye_gymnasticsApp_raw_qml_0.cpp"
+  ".rcc/qrc_qmake_Main.cpp"
+  "CMakeFiles/eye_gymnasticsApp_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/eye_gymnasticsApp_autogen.dir/ParseCache.txt"
+  "eye_gymnasticsApp_autogen"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qmlcache/eye_gymnasticsApp_main_qml.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qmlcache/eye_gymnasticsApp_main_qml.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qmlcache/eye_gymnasticsApp_qmlcache_loader.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qmlcache/eye_gymnasticsApp_qmlcache_loader.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qrc_configuration.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qrc_configuration.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qrc_eye_gymnasticsApp_raw_qml_0.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qrc_eye_gymnasticsApp_raw_qml_0.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qrc_qmake_Main.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/build/.rcc/qrc_qmake_Main.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/eye_gymnasticsApp_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/eye_gymnasticsApp_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/eye_gymnasticsapp_qmltyperegistrations.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/eye_gymnasticsapp_qmltyperegistrations.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/src/CameraLogic.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/src/CameraLogic.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/src/PythonController.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/src/PythonController.cpp.o.d"
+  "CMakeFiles/eye_gymnasticsApp.dir/src/main.cpp.o"
+  "CMakeFiles/eye_gymnasticsApp.dir/src/main.cpp.o.d"
+  "eye_gymnasticsApp"
+  "eye_gymnasticsApp.pdb"
+  "eye_gymnasticsapp_qmltyperegistrations.cpp"
+  "meta_types/qt6eye_gymnasticsapp_release_metatypes.json"
+  "meta_types/qt6eye_gymnasticsapp_release_metatypes.json.gen"
+  "qml/Main/eye_gymnasticsApp.qmltypes"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/eye_gymnasticsApp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -2,11 +2,11 @@
 #define CAMERALOGIC_H
 
 #include <QObject>
-#include <QtMultimedia/QCamera>
-#include <QtMultimedia/QVideoSink>
-#include <QtMultimedia/QVideoFrame>
-#include <QImage>
-#include <QtMultimedia/QMediaCaptureSession>
+#include <QCamera>
+#include <QVideoSink>
+#include <QVideoFrame>
+#include <QMediaCaptureSession>
+#include <QMediaRecorder>
 
 class CameraLogic : public QObject
 {
@@ -16,9 +16,7 @@ class CameraLogic : public QObject
 public:
     explicit CameraLogic(QObject *parent = nullptr);
     ~CameraLogic();
-
     bool active() const { return m_active; }
-
     Q_INVOKABLE void toggle();
 
 signals:
@@ -32,10 +30,11 @@ private:
     void start();
     void stop();
 
-    bool m_active = false;
-    QCamera              *m_camera  = nullptr;
-    QVideoSink           *m_sink    = nullptr;
-    QMediaCaptureSession *m_session = nullptr;
+    bool                  m_active  = false;
+    QCamera              *m_camera   = nullptr;
+    QVideoSink           *m_sink     = nullptr;
+    QMediaCaptureSession *m_session  = nullptr;
+    QMediaRecorder       *m_recorder = nullptr;
 };
 
-#endif // CAMERALOGIC_H
+#endif
